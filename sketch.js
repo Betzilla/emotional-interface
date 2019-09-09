@@ -29,7 +29,6 @@
  */
 'use strict';
 let img;
-let comment;
 
 function preload() {
   img = loadImage('heart.png');
@@ -71,7 +70,6 @@ function draw() {
 
   // like icon
   image(img, width/2, height/2);
-  image(comment, width/4, height/4);
 
   // comments
   // let time = millis();
