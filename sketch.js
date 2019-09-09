@@ -29,57 +29,59 @@
  */
 'use strict';
 let img;
+let comment;
+
+function preload() {
+  img = loadImage('heart.png');
+}
 
 function setup() {
   createCanvas(1280, 768);
-  noCursor();
+  // noCursor();
 
   colorMode(HSB, 360, 100, 100);
   rectMode(CENTER);
   noStroke();
-
-  img = loadImage('DSCF2930.JPG');
-  image(img, 0, 0);
-
   
   textAlign(CENTER, CENTER);
 }
 
 function draw() {
-  background(0);
+  background(100);
   //insta background
   fill(0,0,100);
   rect(650, 250, 220, 400);
 
-//feed image
+  //feed image
   fill(360 - mouseY / 2, 100, 100);
   rect(650, 225, mouseX/2, mouseX/2);
 
-//profile name
+  //profile name
   textSize(14);
   text('Betzilla_', 600, 83);
 
-//settings icon
-fill(0,0,0);
-    ellipse(745, 75, 3, 3);
-    ellipse(745, 80, 3, 3);
-    ellipse(745, 85, 3, 3);
+  //settings icon
+  fill(0,0,0);
+  ellipse(745, 75, 3, 3);
+  ellipse(745, 80, 3, 3);
+  ellipse(745, 85, 3, 3);
 
- //profile icon
+  //profile icon
   ellipse(570, 80, mouseX/20, mouseX/20);
 
-//like icon
- image(img, width/2, height/2);
+  // like icon
+  image(img, width/2, height/2);
+  image(comment, width/4, height/4);
 
-//comments
- // let time = millis();
- //  rotateX(time / 1000);
- //  rotateZ(time / 1234);
-let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
-textSize(10);
-textAlign(LEFT);
-fill(0,0,0);
-text(s, 655, mouseY, 220, 70);
+  // comments
+  // let time = millis();
+  // rotateX(time / 1000);
+  // rotateZ(time / 1234);
+  let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
+  textSize(10);
+  textAlign(LEFT);
+  fill(0,0,0);
+  text(s, 655, mouseY, 220, 70);
 }
 
 function keyPressed() {
