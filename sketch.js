@@ -44,6 +44,8 @@ function preload() {
   comment = loadImage('images/comment.jpeg');
   send = loadImage('images/send.jpeg');
   bookmark = loadImage('images/bookmark.jpeg')
+  // heart = createImg('images/heart.png');
+  
   // helvetica = loadFont('HelveticaNeue-Light.otf')
   // comicSans = loadFont('ComicSansMS.ttf');
 }
