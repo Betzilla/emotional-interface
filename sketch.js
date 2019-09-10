@@ -41,7 +41,7 @@ let profilePicRadius = 40;
 
 function preload() {
   heart = loadImage('./images/heart.png');
-  comment = loadImage('./images/comment.png');
+  comment = loadImage('./images/comment.jpeg');
   send = loadImage('./images/send.jpeg');
   bookmark = loadImage('./images/bookmark.jpeg')
 }
