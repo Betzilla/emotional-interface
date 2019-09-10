@@ -28,60 +28,85 @@
  * s                   : save png
  */
 'use strict';
-let img;
+let heart;
+let comment;
+let send;
+let bookmark;
+let commentY = 605;
+
+let rectWidth = 400;
+let rectHeight = 400;
+
+let profilePicRadius = 40;
+
+function preload() {
+  heart = loadImage('images/heart.png');
+  comment = loadImage('images/comment.jpeg');
+  send = loadImage('images/send.jpeg');
+  bookmark = loadImage('images/bookmark.jpeg')
+  // helvetica = loadFont('HelveticaNeue-Light.otf')
+  // comicSans = loadFont('ComicSansMS.ttf');
+}
 
 function setup() {
-  createCanvas(1280, 768);
-  noCursor();
+  createCanvas(1280, 699);
+  // noCursor();
 
   colorMode(HSB, 360, 100, 100);
   rectMode(CENTER);
   noStroke();
-
-  img = loadImage('DSCF2930.JPG');
-  image(img, 0, 0);
-
   
   textAlign(CENTER, CENTER);
+  // textFont(helvetica);
 }
 
 function draw() {
-  background(0);
+  let base = 100;
+
+  background(50);
   //insta background
   fill(0,0,100);
-  rect(650, 250, 220, 400);
+  rect(base + 250, 319, 400, 637);
 
-//feed image
+  //feed image
   fill(360 - mouseY / 2, 100, 100);
-  rect(650, 225, mouseX/2, mouseX/2);
+  rect(base + 250, 300, rectWidth, rectHeight);
 
-//profile name
+  //profile name
   textSize(14);
-  text('Betzilla_', 600, 83);
+  text('Betzilla_', base + 130, 70);
 
-//settings icon
-fill(0,0,0);
-    ellipse(745, 75, 3, 3);
-    ellipse(745, 80, 3, 3);
-    ellipse(745, 85, 3, 3);
+  //settings icon
+  fill(0,0,0);
+  ellipse(base + 405, 65, 3, 3);
+  ellipse(base + 405, 70, 3, 3);
+  ellipse(base + 405, 75, 3, 3);
 
- //profile icon
-  ellipse(570, 80, mouseX/20, mouseX/20);
+  //profile icon
+  ellipse(base + 90, 70, profilePicRadius, profilePicRadius);
 
-//like icon
- image(img, width/2, height/2);
+  // like icon
+  let iconHeight = 510;
+  image(heart, base + 80, iconHeight, 30, 30);
+  image(comment, base + 110, 512, 29, 26);
+  image(send, base + 140, iconHeight, 30, 30);
+  image(bookmark, base + 400, iconHeight, 27, 27);
 
-//comments
- // let time = millis();
- //  rotateX(time / 1000);
- //  rotateZ(time / 1234);
-let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
-textSize(10);
-textAlign(LEFT);
-fill(0,0,0);
-text(s, 655, mouseY, 220, 70);
+  // comments
+  let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
+  textSize(12);
+  textAlign(LEFT);
+  fill(0,0,0);
+  text(s, base + 255, commentY, 340, 70);
 }
 
 function keyPressed() {
   if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+}
+
+function mouseMoved() {
+  commentY = mouseY;
+  rectWidth = mouseY / 2;
+  rectHeight = mouseY / 2;
+  profilePicRadius = mouseX / 10;
 }
