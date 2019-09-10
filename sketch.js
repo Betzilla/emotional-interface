@@ -29,6 +29,12 @@
  */
 'use strict';
 let img;
+let commentY = 605;
+
+let rectWidth = 400;
+let rectHeight = 400;
+
+let profilePicRadius = 40;
 
 function preload() {
   //img = loadImage('heart.png');
@@ -52,36 +58,43 @@ function draw() {
   background(50);
   //insta background
   fill(0,0,100);
-  rect(base + 250, 350, 400, 637);
+  rect(base + 250, 319, 400, 637);
 
   //feed image
   fill(360 - mouseY / 2, 100, 100);
-  rect(base + 250, 225, mouseX/2, mouseX/2);
+  rect(base + 250, 300, rectWidth, rectHeight);
 
   //profile name
   textSize(14);
-  text('Betzilla_', base + 130, 83);
+  text('Betzilla_', base + 130, 70);
 
   //settings icon
   fill(0,0,0);
+  ellipse(base + 405, 65, 3, 3);
+  ellipse(base + 405, 70, 3, 3);
   ellipse(base + 405, 75, 3, 3);
-  ellipse(base + 405, 80, 3, 3);
-  ellipse(base + 405, 85, 3, 3);
 
   //profile icon
-  ellipse(base + 90, 80, mouseX/10, mouseX/10);
+  ellipse(base + 90, 70, profilePicRadius, profilePicRadius);
 
   // like icon
-  image(img, base + 100, 370);
+  image(img, base + 80, 510, 30, 30);
 
   // comments
   let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
   textSize(14);
   textAlign(LEFT);
   fill(0,0,0);
-  text(s, base + 255, mouseY + 80, 330, 70);
+  text(s, base + 255, commentY, 340, 70);
 }
 
 function keyPressed() {
   if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+}
+
+function mouseMoved() {
+  commentY = mouseY;
+  rectWidth = mouseY/2;
+  rectHeight = mouseY/2;
+  profilePicRadius = mouseX/10;
 }
