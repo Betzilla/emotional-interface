@@ -40,10 +40,10 @@ let rectHeight = 400;
 let profilePicRadius = 40;
 
 function preload() {
-  heart = loadImage('./images/heart.png');
-  comment = loadImage('./images/comment.jpeg');
-  send = loadImage('./images/send.jpeg');
-  bookmark = loadImage('./images/bookmark.jpeg')
+  heart = loadImage('images/heart.png');
+  comment = loadImage('images/comment.jpeg');
+  send = loadImage('images/send.jpeg');
+  bookmark = loadImage('images/bookmark.jpeg')
 }
 
 function setup() {
