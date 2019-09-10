@@ -44,10 +44,11 @@ function preload() {
   comment = loadImage('images/comment.jpeg');
   send = loadImage('images/send.jpeg');
   bookmark = loadImage('images/bookmark.jpeg')
+  helvetica = textFont('HelveticaNeue-Ligh.otf')
 }
 
 function setup() {
-  createCanvas(1280, 699);
+  createCanvas(1280, 699, WEBGL);
   // noCursor();
 
   colorMode(HSB, 360, 100, 100);
@@ -55,6 +56,7 @@ function setup() {
   noStroke();
   
   textAlign(CENTER, CENTER);
+  textFont(helvetica);
 }
 
 function draw() {
@@ -91,10 +93,14 @@ function draw() {
 
   // comments
   let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
-  textSize(14);
+  textSize(12);
   textAlign(LEFT);
   fill(0,0,0);
   text(s, base + 255, commentY, 340, 70);
+
+  let time = millis();
+  rotateX(time / 1000);
+  rotateZ(time / 1234);
 }
 
 function keyPressed() {
