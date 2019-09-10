@@ -28,7 +28,10 @@
  * s                   : save png
  */
 'use strict';
-let img;
+let heart;
+let comment;
+let send;
+let bookmark;
 let commentY = 605;
 
 let rectWidth = 400;
@@ -37,8 +40,10 @@ let rectHeight = 400;
 let profilePicRadius = 40;
 
 function preload() {
-  img = loadImage('heart.png');
-  // img = createImg('heart.png');
+  heart = loadImage('heart.png');
+  comment = loadImage('comment.png');
+  send = loadImage('send.jpeg');
+  bookmark = loadImage('bookmark.jpeg')
 }
 
 function setup() {
@@ -78,7 +83,10 @@ function draw() {
   ellipse(base + 90, 70, profilePicRadius, profilePicRadius);
 
   // like icon
-  image(img, base + 80, 510, 30, 30);
+  image(heart, base + 80, 510, 30, 30);
+  image(comment, base + 95, 510, 30, 30);
+  image(send, base + 110, 510, 30, 30);
+  image(bookmark, base + 125, 510, 30, 30);
 
   // comments
   let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
