@@ -83,10 +83,11 @@ function draw() {
   ellipse(base + 90, 70, profilePicRadius, profilePicRadius);
 
   // like icon
-  image(heart, base + 80, 510, 30, 30);
-  image(comment, base + 110, 505, 40, 40);
-  image(send, base + 140, 510, 30, 30);
-  image(bookmark, base + 400, 510, 27, 27);
+  let iconHeight = 510;
+  image(heart, base + 80, iconHeight, 30, 30);
+  image(comment, base + 110, iconHeight, 30, 30);
+  image(send, base + 140, iconHeight, 30, 30);
+  image(bookmark, base + 400, iconHeight, 27, 27);
 
   // comments
   let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
@@ -102,7 +103,7 @@ function keyPressed() {
 
 function mouseMoved() {
   commentY = mouseY;
-  rectWidth = mouseY/2;
-  rectHeight = mouseY/2;
-  profilePicRadius = mouseX/10;
+  rectWidth = mouseY / 2;
+  rectHeight = mouseY / 2;
+  profilePicRadius = mouseX / 10;
 }
