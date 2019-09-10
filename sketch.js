@@ -44,8 +44,8 @@ function preload() {
   comment = loadImage('images/comment.jpeg');
   send = loadImage('images/send.jpeg');
   bookmark = loadImage('images/bookmark.jpeg')
-  helvetica = textFont('HelveticaNeue-Light.otf')
-  comicSans = textFont('ComicSansMS.ttf');
+  helvetica = loadFont('HelveticaNeue-Light.otf')
+  comicSans = loadFont('ComicSansMS.ttf');
 }
 
 function setup() {
