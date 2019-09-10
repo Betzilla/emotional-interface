@@ -37,8 +37,8 @@ let rectHeight = 400;
 let profilePicRadius = 40;
 
 function preload() {
-  //img = loadImage('heart.png');
-  img = createImg('heart.png');
+  img = loadImage('heart.png');
+  // img = createImg('heart.png');
 }
 
 function setup() {
