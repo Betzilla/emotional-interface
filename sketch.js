@@ -40,10 +40,10 @@ let rectHeight = 400;
 let profilePicRadius = 40;
 
 function preload() {
-  heart = loadImage('heart.png');
-  comment = loadImage('comment.png');
-  send = loadImage('send.jpeg');
-  bookmark = loadImage('bookmark.jpeg')
+  heart = loadImage('images/heart.png');
+  comment = loadImage('images/comment.png');
+  send = loadImage('images/send.jpeg');
+  bookmark = loadImage('images/bookmark.jpeg')
 }
 
 function setup() {
@@ -86,7 +86,7 @@ function draw() {
   image(heart, base + 80, 510, 30, 30);
   image(comment, base + 110, 505, 40, 40);
   image(send, base + 140, 510, 30, 30);
-  image(bookmark, base + 430, 510, 30, 30);
+  image(bookmark, base + 400, 510, 27, 27);
 
   // comments
   let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
