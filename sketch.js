@@ -44,12 +44,12 @@ function preload() {
   comment = loadImage('images/comment.jpeg');
   send = loadImage('images/send.jpeg');
   bookmark = loadImage('images/bookmark.jpeg')
-  helvetica = loadFont('HelveticaNeue-Light.otf')
-  comicSans = loadFont('ComicSansMS.ttf');
+  // helvetica = loadFont('HelveticaNeue-Light.otf')
+  // comicSans = loadFont('ComicSansMS.ttf');
 }
 
 function setup() {
-  createCanvas(1280, 699, WEBGL);
+  createCanvas(1280, 699);
   // noCursor();
 
   colorMode(HSB, 360, 100, 100);
@@ -57,7 +57,7 @@ function setup() {
   noStroke();
   
   textAlign(CENTER, CENTER);
-  textFont(helvetica);
+  // textFont(helvetica);
 }
 
 function draw() {
