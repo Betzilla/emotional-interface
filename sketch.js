@@ -97,10 +97,6 @@ function draw() {
   textAlign(LEFT);
   fill(0,0,0);
   text(s, base + 255, commentY, 340, 70);
-
-  let time = millis();
-  rotateX(time / 1000);
-  rotateZ(time / 1234);
 }
 
 function keyPressed() {
