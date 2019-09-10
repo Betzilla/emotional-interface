@@ -84,9 +84,9 @@ function draw() {
 
   // like icon
   image(heart, base + 80, 510, 30, 30);
-  image(comment, base + 110, 510, 35, 35);
+  image(comment, base + 110, 505, 40, 40);
   image(send, base + 140, 510, 30, 30);
-  image(bookmark, base + 230, 510, 30, 30);
+  image(bookmark, base + 430, 510, 30, 30);
 
   // comments
   let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
