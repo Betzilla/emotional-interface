@@ -85,7 +85,7 @@ function draw() {
   // like icon
   let iconHeight = 510;
   image(heart, base + 80, iconHeight, 30, 30);
-  image(comment, base + 110, iconHeight, 29, 26);
+  image(comment, base + 110, 512, 29, 26);
   image(send, base + 140, iconHeight, 30, 30);
   image(bookmark, base + 400, iconHeight, 27, 27);
 
