@@ -32,40 +32,68 @@ let heart;
 let comment;
 let send;
 let bookmark;
-let commentY = 605;
+let feed;
+
+let commentY = 585;
 
 let rectWidth = 400;
 let rectHeight = 400;
 
 let profilePicRadius = 40;
+let textSpace = 12;
+let commentSize = 12;
+
+let colorWidth = 360;
+let colorHeight = 100;
+
+let pressedTextX = 0;
+let pressedTextY = 0;
+let pressedTextSize = 0;
+var minText = 5;
+var maxText = 70;
+
+//shapes
+var tileCount = 10;
+
+var tileWidth;
+var tileHeight;
+var shapeSize = 50;
+var newShapeSize = shapeSize;
+var shapeAngle = 0;
+var maxDist;
+var currentShape;
+var shapes;
+
+var sizeMode = 0;
 
 function preload() {
-  heart = loadImage('images/heart.png');
-  comment = loadImage('images/comment.jpeg');
-  send = loadImage('images/send.jpeg');
-  bookmark = loadImage('images/bookmark.jpeg')
-  // heart = createImg('images/heart.png');
-  
-  // helvetica = loadFont('HelveticaNeue-Light.otf')
-  // comicSans = loadFont('ComicSansMS.ttf');
+  // heart = loadImage('images/heart.png');
+  // comment = loadImage('images/comment.jpeg');
+  // send = loadImage('images/send.jpeg');
+  // bookmark = loadImage('images/bookmark.jpeg')
+  heart = createImg('images/heart.png');
+  comment = createImg('images/comment.jpeg');
+  send = createImg('images/send.jpeg');
+  bookmark = createImg('images/bookmark.jpeg');
+
 }
 
 function setup() {
   createCanvas(1280, 699);
   // noCursor();
 
-  colorMode(HSB, 360, 100, 100);
+  colorMode(HSB, colorWidth, colorHeight, 100);
   rectMode(CENTER);
   noStroke();
   
   textAlign(CENTER, CENTER);
-  // textFont(helvetica);
 }
 
 function draw() {
-  let base = 100;
+  let base = 300;
 
   background(50);
+   // rotate(PI / roateAngle);
   //insta background
   fill(0,0,100);
   rect(base + 250, 319, 400, 637);
@@ -73,10 +101,12 @@ function draw() {
   //feed image
   fill(360 - mouseY / 2, 100, 100);
   rect(base + 250, 300, rectWidth, rectHeight);
+  //image(feed, base + 250, 500, rectWidth, rectHeight);
 
   //profile name
   textSize(14);
-  text('Betzilla_', base + 130, 70);
+  fill(0,0,0);
+  text('yourothername', base + 130, 70);
 
   //settings icon
   fill(0,0,0);
@@ -87,28 +117,40 @@ function draw() {
   //profile icon
   ellipse(base + 90, 70, profilePicRadius, profilePicRadius);
 
-  // like icon
+  // icons
   let iconHeight = 510;
-  image(heart, base + 80, iconHeight, 30, 30);
+  image(heart, base + 77, iconHeight, 32, 32);
   image(comment, base + 110, 512, 29, 26);
   image(send, base + 140, iconHeight, 30, 30);
-  image(bookmark, base + 400, iconHeight, 27, 27);
+  image(bookmark, base + 400, iconHeight, 27, 30);
 
   // comments
   let s = 'betzilla_happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
-  textSize(12);
+  textSize(commentSize);
   textAlign(LEFT);
+  textLeading(textSpace);
   fill(0,0,0);
-  text(s, base + 255, commentY, 340, 70);
-}
+  text(s, base + 255, commentY, 350, 70);
 
-function keyPressed() {
-  if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+  //mousePressed text
+  textSize(pressedTextSize);
+  fill(100,10,0);
+  text('LIKE',pressedTextX,pressedTextY);
 }
 
 function mouseMoved() {
-  commentY = mouseY;
-  rectWidth = mouseY / 2;
-  rectHeight = mouseY / 2;
-  profilePicRadius = mouseX / 10;
+  //commentY = mouseY;
+  rectWidth = mouseY / 1.5;
+  rectHeight = mouseY / 1.5;
+  profilePicRadius = mouseX / 20;
+  textSpace = mouseX/60;
+  commentSize = mouseX/30;
 }
+
+function mousePressed() {
+   pressedTextX = mouseX;
+   pressedTextY = mouseY;
+pressedTextSize = random(minText, maxText);
+   
+ }
+
