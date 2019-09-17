@@ -106,7 +106,7 @@ let s = 'Lift4Lyfe Another Monday at the gym. Working those biceps buddy! ;) :eg
 //   ladyImages = [ada, eve, mink, mona, pearl, swinger]
 // }
 
-function preload {
+function preload() {
 	heart = loadImage('images/heart.png');
     comment = loadImage('images/comment.jpeg');
     send = loadImage('images/send.jpeg');
