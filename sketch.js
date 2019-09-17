@@ -88,32 +88,40 @@ var ladyImages;
 
 let s = 'Lift4Lyfe Another Monday at the gym. Working those biceps buddy! ;) :eggplant: #muscles';
 
-function preload() {
-  heart = loadImage('images/heart.png');
-  comment = loadImage('images/comment.jpeg');
-  send = loadImage('images/send.jpeg');
-  bookmark = loadImage('images/bookmark.jpeg')
-  // heart = createImg('images/heart.png');
-  // comment = createImg('images/comment.jpeg');
-  // send = createImg('images/send.jpeg');
-  // bookmark = createImg('images/bookmark.jpeg');
+// function preload() {
+//   heart = createImg('images/heart.png');
+//   comment = createImg('images/comment.jpeg');
+//   send = createImg('images/send.jpeg');
+//   bookmark = createImg('images/bookmark.jpeg');
   
-  feedImg = loadImage('images/muscle.png');
-  // feedImg = createImg('images/muscle.png');
+//   feedImg = createImg('images/muscle.png');
 
-  ada = loadImage('images/ada.jpg');
-  eve = loadImage('images/eve.jpg');
-  mink = loadImage('images/mink.jpg');
-  mona = loadImage('images/mona.jpg');
-  pearl = loadImage('images/pearl.jpg');
-  swinger = loadImage('images/swinger.jpg');
-  // ada = createImg('images/ada.jpg');
-  // eve = createImg('images/eve.jpg');
-  // mink = createImg('images/mink.jpg');
-  // mona = createImg('images/mona.jpg');
-  // pearl = createImg('images/pearl.jpg');
-  // swinger = createImg('images/swinger.jpg');
-  ladyImages = [ada, eve, mink, mona, pearl, swinger]
+
+//   ada = createImg('images/ada.jpg');
+//   eve = createImg('images/eve.jpg');
+//   mink = createImg('images/mink.jpg');
+//   mona = createImg('images/mona.jpg');
+//   pearl = createImg('images/pearl.jpg');
+//   swinger = createImg('images/swinger.jpg');
+//   ladyImages = [ada, eve, mink, mona, pearl, swinger]
+// }
+
+function preload {
+	heart = loadImage('images/heart.png');
+    comment = loadImage('images/comment.jpeg');
+    send = loadImage('images/send.jpeg');
+    bookmark = loadImage('images/bookmark.jpeg')
+
+	 ada = loadImage('images/ada.jpg');
+	 eve = loadImage('images/eve.jpg');
+	 mink = loadImage('images/mink.jpg');
+	 mona = loadImage('images/mona.jpg');
+	 pearl = loadImage('images/pearl.jpg');
+	 swinger = loadImage('images/swinger.jpg');
+
+    feedImg = loadImage('images/muscle.png');
+
+	ladyImages = [ada, eve, mink, mona, pearl, swinger]
 }
 
 function setup() {
@@ -131,7 +139,7 @@ function setup() {
 
 function draw() {
   background(backgroundCol,100,100);
-   // rotate(PI / roateAngle);
+   
   //insta background
   fill(0,0,100);
   rect(base + 250, 319, 400, 637);
