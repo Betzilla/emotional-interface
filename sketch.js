@@ -142,10 +142,10 @@ function preload() {
 
 	  ladyImages = [ada, eve, mink, mona, pearl, swinger]
 
-   happyImg = loadImg('images/slack.png');
+   happyImg = loadImage('images/slack.png');
 
-   howImg = loadImg('images/how.png');
-   fineImg = loadImg('images/fine.png');
+howImg = loadImage('images/how.png');
+fineImg = loadImage('images/fine.png');
 }
 
 function setup() {
