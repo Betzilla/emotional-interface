@@ -94,53 +94,53 @@ var ladyImages;
 
 let s = 'Artstagram_ Another Monday at the gym. Working those biceps buddy! ;) :eggplant: #muscles';
 
-function preload() {
-  //howImg = createImg('images/how.png');
-
-  heart = createImg('images/heart.png');
-  comment = createImg('images/comment.jpeg');
-  send = createImg('images/send.jpeg');
-  bookmark = createImg('images/bookmark.jpeg');
-  
-  feedImg = createImg('images/muscle.jpeg');
-
-
-  ada = createImg('images/ada.jpg');
-  eve = createImg('images/eve.jpg');
-  mink = createImg('images/mink.jpg');
-  mona = createImg('images/mona.jpg');
-  pearl = createImg('images/pearl.jpg');
-  swinger = createImg('images/swinger.jpg');
-  ladyImages = [ada, eve, mink, mona, pearl, swinger]
-
-  happyImg = createImg('images/slack.png');
-
-  
-  //fineImg = createImg('images/fine.png');
-}
-
 // function preload() {
-// 	heart = loadImage('images/heart.png');
-//     comment = loadImage('images/comment.jpeg');
-//     send = loadImage('images/send.jpeg');
-//     bookmark = loadImage('images/bookmark.jpeg')
+//   //howImg = createImg('images/how.png');
 
-// 	 ada = loadImage('images/ada.jpg');
-// 	 eve = loadImage('images/eve.jpg');
-// 	 mink = loadImage('images/mink.jpg');
-// 	 mona = loadImage('images/mona.jpg');
-// 	 pearl = loadImage('images/pearl.jpg');
-// 	 swinger = loadImage('images/swinger.jpg');
+//   heart = createImg('images/heart.png');
+//   comment = createImg('images/comment.jpeg');
+//   send = createImg('images/send.jpeg');
+//   bookmark = createImg('images/bookmark.jpeg');
+  
+//   feedImg = createImg('images/muscle.jpeg');
 
-//     feedImg = loadImage('images/muscle.jpeg');
 
-// 	  ladyImages = [ada, eve, mink, mona, pearl, swinger]
+//   ada = createImg('images/ada.jpg');
+//   eve = createImg('images/eve.jpg');
+//   mink = createImg('images/mink.jpg');
+//   mona = createImg('images/mona.jpg');
+//   pearl = createImg('images/pearl.jpg');
+//   swinger = createImg('images/swinger.jpg');
+//   ladyImages = [ada, eve, mink, mona, pearl, swinger]
 
-//    happyImg = loadImg('images/slack.png');
+//   happyImg = createImg('images/slack.png');
 
-//    hruImg = loadImg('images/hru.png');
-//    fineImg = loadImg('images/fine.png');
+  
+//   //fineImg = createImg('images/fine.png');
 // }
+
+function preload() {
+	heart = loadImage('images/heart.png');
+    comment = loadImage('images/comment.jpeg');
+    send = loadImage('images/send.jpeg');
+    bookmark = loadImage('images/bookmark.jpeg')
+
+	 ada = loadImage('images/ada.jpg');
+	 eve = loadImage('images/eve.jpg');
+	 mink = loadImage('images/mink.jpg');
+	 mona = loadImage('images/mona.jpg');
+	 pearl = loadImage('images/pearl.jpg');
+	 swinger = loadImage('images/swinger.jpg');
+
+    feedImg = loadImage('images/muscle.jpeg');
+
+	  ladyImages = [ada, eve, mink, mona, pearl, swinger]
+
+   happyImg = loadImg('images/slack.png');
+
+   howImg = loadImg('images/how.png');
+   //fineImg = loadImg('images/fine.png');
+}
 
 function setup() {
   createCanvas(1280, 699);
@@ -198,7 +198,7 @@ function draw() {
   text(s, base + 255, commentY, 350, 70);
 
   //text strips
-  //image(howImg, 100, 0, 75, 964);
+  image(howImg, 100, 0, 75, 964);
   //image(fineImg,200,1,75,964);
 
   // glitchy shifty effect
