@@ -38,6 +38,7 @@ let send;
 let bookmark;
 let feed;
 let feedImg;
+let happyImg;
 
 let ada;
 let eve;
@@ -59,6 +60,11 @@ let commentSize = 12;
 
 let colorWidth = 360;
 let colorHeight = 100;
+
+let heartIconPos = 510;
+let commentIconPos = 512;
+let sendIconPos = 510;
+let bookIconPos = 510;
 
 let pressedTextX = 0;
 let pressedTextY = 0;
@@ -86,43 +92,55 @@ var dropImgBool = false;
 
 var ladyImages;
 
-let s = 'Lift4Lyfe Another Monday at the gym. Working those biceps buddy! ;) :eggplant: #muscles';
-
-// function preload() {
-//   heart = createImg('images/heart.png');
-//   comment = createImg('images/comment.jpeg');
-//   send = createImg('images/send.jpeg');
-//   bookmark = createImg('images/bookmark.jpeg');
-  
-//   feedImg = createImg('images/muscle.png');
-
-
-//   ada = createImg('images/ada.jpg');
-//   eve = createImg('images/eve.jpg');
-//   mink = createImg('images/mink.jpg');
-//   mona = createImg('images/mona.jpg');
-//   pearl = createImg('images/pearl.jpg');
-//   swinger = createImg('images/swinger.jpg');
-//   ladyImages = [ada, eve, mink, mona, pearl, swinger]
-// }
+let s = 'Artstagram_ Another Monday at the gym. Working those biceps buddy! ;) :eggplant: #muscles';
 
 function preload() {
-	heart = loadImage('images/heart.png');
-    comment = loadImage('images/comment.jpeg');
-    send = loadImage('images/send.jpeg');
-    bookmark = loadImage('images/bookmark.jpeg')
+  //howImg = createImg('images/how.png');
 
-	 ada = loadImage('images/ada.jpg');
-	 eve = loadImage('images/eve.jpg');
-	 mink = loadImage('images/mink.jpg');
-	 mona = loadImage('images/mona.jpg');
-	 pearl = loadImage('images/pearl.jpg');
-	 swinger = loadImage('images/swinger.jpg');
+  heart = createImg('images/heart.png');
+  comment = createImg('images/comment.jpeg');
+  send = createImg('images/send.jpeg');
+  bookmark = createImg('images/bookmark.jpeg');
+  
+  feedImg = createImg('images/muscle.jpeg');
 
-    feedImg = loadImage('images/muscle.png');
 
-	ladyImages = [ada, eve, mink, mona, pearl, swinger]
+  ada = createImg('images/ada.jpg');
+  eve = createImg('images/eve.jpg');
+  mink = createImg('images/mink.jpg');
+  mona = createImg('images/mona.jpg');
+  pearl = createImg('images/pearl.jpg');
+  swinger = createImg('images/swinger.jpg');
+  ladyImages = [ada, eve, mink, mona, pearl, swinger]
+
+  happyImg = createImg('images/slack.png');
+
+  
+  //fineImg = createImg('images/fine.png');
 }
+
+// function preload() {
+// 	heart = loadImage('images/heart.png');
+//     comment = loadImage('images/comment.jpeg');
+//     send = loadImage('images/send.jpeg');
+//     bookmark = loadImage('images/bookmark.jpeg')
+
+// 	 ada = loadImage('images/ada.jpg');
+// 	 eve = loadImage('images/eve.jpg');
+// 	 mink = loadImage('images/mink.jpg');
+// 	 mona = loadImage('images/mona.jpg');
+// 	 pearl = loadImage('images/pearl.jpg');
+// 	 swinger = loadImage('images/swinger.jpg');
+
+//     feedImg = loadImage('images/muscle.jpeg');
+
+// 	  ladyImages = [ada, eve, mink, mona, pearl, swinger]
+
+//    happyImg = loadImg('images/slack.png');
+
+//    hruImg = loadImg('images/hru.png');
+//    fineImg = loadImg('images/fine.png');
+// }
 
 function setup() {
   createCanvas(1280, 699);
@@ -147,12 +165,12 @@ function draw() {
   //feed image
   // fill(360 - mouseY / 2, 100, 100);
   // rect(base + 250, 300, rectWidth, rectHeight);
-  image(feedImg, rectX, rectY, rectWidth, rectHeight);
+  image(feedImg, rectX++, rectY, rectWidth, rectHeight);
 
   //profile name
   textSize(14);
   fill(0,0,0);
-  text('Lift4Lyfe', base + 130, 55);
+  text('Artstagram_', (base + 130), 55);
 
   //settings icon
   fill(0,0,0);
@@ -161,14 +179,15 @@ function draw() {
   ellipse(base + 405, 60, 3, 3);
 
   //profile icon
+  fill(360 - mouseY / 2, 100, 100);
   ellipse(base + 90, 55, profilePicRadius, profilePicRadius);
 
   // icons
-  let iconHeight = 510;
-  image(heart, base + 77, iconHeight, 32, 32);
-  image(comment, base + 110, 512, 29, 26);
-  image(send, base + 140, iconHeight, 30, 30);
-  image(bookmark, base + 400, iconHeight, 27, 30);
+  //let iconHeight = 510;
+  image(heart, base + 77, heartIconPos++, 32, 32);
+  image(comment, base + 110, commentIconPos++, 29, 26);
+  image(send, base + 140, sendIconPos++, 30, 30);
+  image(bookmark, base + 400, bookIconPos++, 27, 30);
 
   // comments
   s;
@@ -177,6 +196,10 @@ function draw() {
   textLeading(textSpace);
   fill(0,0,0);
   text(s, base + 255, commentY, 350, 70);
+
+  //text strips
+  //image(howImg, 100, 0, 75, 964);
+  //image(fineImg,200,1,75,964);
 
   // glitchy shifty effect
   if (shift) {
@@ -199,6 +222,9 @@ function draw() {
   textSize(pressedTextSize);
   fill(100,10,0);
   text('LIKE',pressedTextX,pressedTextY);
+
+  //slack image random
+  image(happyImg, mouseX+random(0,500), mouseY + random(20, 80), 226, 54);
 }
 
 function mouseMoved() {
@@ -223,7 +249,13 @@ function mousePressed() {
 	shift = true;
 	dropImgBool = true;
 	feedImg = ladyImages[Math.round(random(0,5))];
-	s = 'Lift4Lyfe is happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
+	s = 'Artstagram_ is happy hushed grin beam tears joy smile upside-down winking star-struck kissing face savoring zany squiting money-mouth hearts halo kiss money-mouth shushing thinking zipper-muth expressionless without mouth hugging tongue smirking unamused rolling eyes grimacing lying relieved pensive';
+  
+  //icon positions
+  heartIconPos = random(300,600);
+  commentIconPos = random(300,600);
+  sendIconPos = random(300,600);
+  bookIconPos = random(300,600);
 }
 
 function blurryShifty() {
@@ -248,5 +280,14 @@ function dropImg() {
 
 function mouseReleased() {
   dropImgBool = false
+}
+
+function mouseWheel(event) {
+  print(event.delta);
+  //move the square according to the vertical scroll amount
+  rectWidth += event.delta/100;
+  rectHeight += event.delta/100;
+  //uncomment to block page scrolling
+  //return false;
 }
 
