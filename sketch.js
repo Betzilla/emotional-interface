@@ -40,12 +40,19 @@ let feed;
 let feedImg;
 let happyImg;
 
+let howImg;
+let howImgPos = -500;
+let fineImg;
+let fineImgPos = 500;
+
 let ada;
 let eve;
 let mink;
 let mona;
 let pearl;
 let swinger;
+
+let ArtstagramSize = 14;
 
 let commentY = 585;
 
@@ -66,8 +73,8 @@ let commentIconPos = 512;
 let sendIconPos = 510;
 let bookIconPos = 510;
 
-let pressedTextX = 0;
-let pressedTextY = 0;
+let pressedTextX = -10;
+let pressedTextY = -10;
 let pressedTextSize = 0;
 var minText = 5;
 var maxText = 70;
@@ -95,7 +102,6 @@ var ladyImages;
 let s = 'Artstagram_ Another Monday at the gym. Working those biceps buddy! ;) :eggplant: #muscles';
 
 // function preload() {
-//   //howImg = createImg('images/how.png');
 
 //   heart = createImg('images/heart.png');
 //   comment = createImg('images/comment.jpeg');
@@ -115,12 +121,12 @@ let s = 'Artstagram_ Another Monday at the gym. Working those biceps buddy! ;) :
 
 //   happyImg = createImg('images/slack.png');
 
-  
-//   //fineImg = createImg('images/fine.png');
+//   howImg = createImg('images/how.png');
+//   fineImg = createImg('images/fine.png');
 // }
 
 function preload() {
-	heart = loadImage('images/heart.png');
+	  heart = loadImage('images/heart.png');
     comment = loadImage('images/comment.jpeg');
     send = loadImage('images/send.jpeg');
     bookmark = loadImage('images/bookmark.jpeg')
@@ -139,12 +145,11 @@ function preload() {
    happyImg = loadImg('images/slack.png');
 
    howImg = loadImg('images/how.png');
-   //fineImg = loadImg('images/fine.png');
+   fineImg = loadImg('images/fine.png');
 }
 
 function setup() {
   createCanvas(1280, 699);
-  // noCursor();
 
   image(feedImg, 0, 0);
 
@@ -156,7 +161,7 @@ function setup() {
 }
 
 function draw() {
-  background(backgroundCol,100,100);
+  background(backgroundCol++,100,100);
    
   //insta background
   fill(0,0,100);
@@ -168,7 +173,9 @@ function draw() {
   image(feedImg, rectX++, rectY, rectWidth, rectHeight);
 
   //profile name
-  textSize(14);
+  textSize(ArtstagramSize++);
+  textStyle(BOLD);
+  textFont('ComicSans');
   fill(0,0,0);
   text('Artstagram_', (base + 130), 55);
 
@@ -194,12 +201,18 @@ function draw() {
   textSize(commentSize);
   textAlign(LEFT);
   textLeading(textSpace);
+  textStyle(NORMAL);
+  textFont('Helvetica');
   fill(0,0,0);
   text(s, base + 255, commentY, 350, 70);
 
   //text strips
-  image(howImg, 100, 0, 75, 964);
-  //image(fineImg,200,1,75,964);
+  fill(100,100,100);
+  rect(105,0,75,1300);
+  image(howImg, 100, howImgPos++, 75, 713);
+  fill(300,100,100);
+  rect(905,0,75,1200);
+  image(fineImg,900,fineImgPos--,75,964);
 
   // glitchy shifty effect
   if (shift) {
@@ -256,6 +269,8 @@ function mousePressed() {
   commentIconPos = random(300,600);
   sendIconPos = random(300,600);
   bookIconPos = random(300,600);
+
+  ArtstagramSize = 14;
 }
 
 function blurryShifty() {
@@ -267,6 +282,7 @@ let startY = 300
 function dropImg() {
 	//image(comment, startX, startY, 100, 100);
 	textSize(100);
+  fill(40,0,100);
 	text('SHARE', startX, startY);
 	startX = startX + 100;
 	if (startX % 900 === 0) {
