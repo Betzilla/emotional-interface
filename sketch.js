@@ -209,10 +209,10 @@ function draw() {
   //text strips
   fill(100,100,100);
   rect(105,0,75,1300);
-  image(howImg, 100, howImgPos++, 75, 713);
+  image(howImg, 100, howImgPos, 75, 713);
   fill(300,100,100);
   rect(905,0,75,1200);
-  image(fineImg,900,fineImgPos--,75,964);
+  image(fineImg,900,fineImgPos,75,964);
 
   // glitchy shifty effect
   if (shift) {
